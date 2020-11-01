@@ -38,5 +38,5 @@ setup(
     setup_requires=["pytest-runner"],
     tests_require=["pytest"],
     url="https://github.com/sivakov512/pytest-aiohttp-client",
-    version="0.0.1",
+    version="0.0.2",
 )
