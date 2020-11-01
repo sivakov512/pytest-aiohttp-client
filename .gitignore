@@ -1,0 +1,3 @@
+*.py[cod]
+.venv
+__pycache__
