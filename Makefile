@@ -5,7 +5,7 @@ clean:
 	find . -name ".mypy_cache" -exec rm -r --force {} +
 
 test:
-	pytest --cov=pytest_aiohttp_client
+	pytest
 
 lint:
 	flake8

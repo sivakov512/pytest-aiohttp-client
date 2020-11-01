@@ -1,5 +1,5 @@
 [flake8]
-exclude = .venv
+exclude = .venv, .eggs
 extend-ignore = E203, W503
 inline-quotes = "
 max-line-length = 88

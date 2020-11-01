@@ -1,4 +1,9 @@
+*.egg-info
 *.py[cod]
-.coverage
+.cache
+.eggs
+.pytest_cache
 .venv
 __pycache__
+build
+dist
