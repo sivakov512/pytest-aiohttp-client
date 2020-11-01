@@ -1,8 +1,7 @@
 on: [push]
 
 jobs:
-  build:
-
+  test:
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 4
@@ -27,3 +26,11 @@ jobs:
 
     - name: Test
       run: make test
+
+    - name: Upload coverage
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        pip install coveralls
+        coveralls
+      if: matrix.python-version == 3.8

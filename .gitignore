@@ -1,3 +1,4 @@
 *.py[cod]
+.coverage
 .venv
 __pycache__

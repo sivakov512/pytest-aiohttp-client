@@ -2,6 +2,7 @@ appdirs==1.4.4
 attrs==20.2.0
 black==20.8b1
 click==7.1.2
+coverage==5.3
 fancycompleter==0.9.1
 flake8==3.8.4
 flake8-debugger==3.2.1
@@ -25,6 +26,7 @@ pyparsing==2.4.7
 pyrepl==0.9.0
 pytest==6.1.2
 pytest-asyncio==0.14.0
+pytest-cov==2.10.1
 regex==2020.10.28
 six==1.15.0
 testfixtures==6.15.0
