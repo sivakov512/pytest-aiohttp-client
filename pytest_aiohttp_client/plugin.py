@@ -1,11 +1,11 @@
-from typing import Any, Awaitable, Callable, Dict, List, Optional, Union
+from typing import Any, Awaitable, Callable, Optional, Union
 
 import pytest
 from aiohttp.client import ClientResponse
 from aiohttp.test_utils import TestClient
 from aiohttp.web import Application
 
-_RetType = Union[ClientResponse, List[Any], Dict[Any, Any], bytes]
+_RetType = Union[ClientResponse, Any, bytes]
 
 
 class AwesomeTestClient:
