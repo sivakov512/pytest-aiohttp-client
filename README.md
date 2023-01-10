@@ -1,4 +1,5 @@
 # pytest-aiohttp-client
+
 Awesome pytest fixture for awesome [aiohttp](https://docs.aiohttp.org/en/stable/)!
 
 [![Build status](https://github.com/sivakov512/pytest-aiohttp-client/workflows/test/badge.svg)](https://github.com/sivakov512/pytest-aiohttp-client/actions?query=workflow%3Atest)
@@ -8,14 +9,23 @@ Awesome pytest fixture for awesome [aiohttp](https://docs.aiohttp.org/en/stable/
 [![PyPi](https://img.shields.io/pypi/v/pytest-aiohttp-client.svg)](https://pypi.python.org/pypi/pytest-aiohttp-client)
 
 ## Installation
+
 Install it via `pip` tool:
 
 ```bash
 pip install pytest-aiohttp-client
 ```
 
+or Poetry:
+
+```bash
+poetry add yandex-geocoder
+```
+
 ## Usage example
+
 Plugin provides `api` fixture, but you should define `aiohttp_app` fixture first:
+
 ```python
 import pytest
 
@@ -28,7 +38,9 @@ def aiohttp_app() -> Application:
 ```
 
 ### Default decoding
+
 Fixture will decode and return payload by default as json or bytes (depends on `Content-Type` header):
+
 ```python
 async def test_returns_json(api):
     got = await api.get("/json-url/")
@@ -43,14 +55,18 @@ async def test_returns_bytes(api):
 ```
 
 ### Status code assertions
+
 You can assert on status code:
+
 ```python
 async def test_returns_ok(api):
     await api.get("/url/", expected_status=200)
 ```
 
 ### `Response` result
+
 Type `as_response=True` if you need `ClientResponse` object:
+
 ```python
 from aiohttp.client import ClientResponse
 
@@ -60,27 +76,26 @@ async def test_returns_response(api):
     assert isinstance(got, ClientResponse)
 ```
 
-
 ## Development and contribution
 
-* install project dependencies
+First of all you should install [Poetry](https://python-poetry.org).
+
+- install project dependencies
+
 ```bash
-python setup.py develop
+make install
 ```
 
-* install linting, formatting and testing tools
-```bash
-pip install -r requirements.txt
-```
+- run linters
 
-* run tests
-```bash
-make test
-```
-
-* run linters
 ```bash
 make lint
 ```
 
-* feel free to contribute!
+- run tests
+
+```bash
+make test
+```
+
+- feel free to contribute!

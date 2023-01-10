@@ -1,48 +1,47 @@
-from typing import Any, Awaitable, Callable, Optional, Union
+__all__ = ["AwesomeTestClient"]
+
+import typing
 
 import pytest
 from aiohttp.client import ClientResponse
 from aiohttp.test_utils import TestClient
 from aiohttp.web import Application
 
-_RetType = Union[ClientResponse, Any, bytes]
+_RetType = typing.Union[ClientResponse, typing.Any, bytes]
 
 
 class AwesomeTestClient:
-    def __init__(
-        self,
-        aiohttp_test_client: TestClient,
-    ) -> None:
+    def __init__(self, aiohttp_test_client: TestClient) -> None:
         self._inner = aiohttp_test_client
 
-    async def get(self, path: str, **kwargs: Any) -> _RetType:
+    async def get(self, path: str, **kwargs: typing.Any) -> _RetType:
         return await self.request("GET", path, **kwargs)
 
-    async def post(self, path: str, **kwargs: Any) -> _RetType:
+    async def post(self, path: str, **kwargs: typing.Any) -> _RetType:
         return await self.request("POST", path, **kwargs)
 
-    async def options(self, path: str, **kwargs: Any) -> _RetType:
+    async def options(self, path: str, **kwargs: typing.Any) -> _RetType:
         return await self.request("OPTIONS", path, **kwargs)
 
-    async def head(self, path: str, **kwargs: Any) -> _RetType:
+    async def head(self, path: str, **kwargs: typing.Any) -> _RetType:
         return await self.request("HEAD", path, **kwargs)
 
-    async def put(self, path: str, **kwargs: Any) -> _RetType:
+    async def put(self, path: str, **kwargs: typing.Any) -> _RetType:
         return await self.request("PUT", path, **kwargs)
 
-    async def patch(self, path: str, **kwargs: Any) -> _RetType:
+    async def patch(self, path: str, **kwargs: typing.Any) -> _RetType:
         return await self.request("PATCH", path, **kwargs)
 
-    async def delete(self, path: str, **kwargs: Any) -> _RetType:
+    async def delete(self, path: str, **kwargs: typing.Any) -> _RetType:
         return await self.request("DELETE", path, **kwargs)
 
     async def request(
         self,
         method: str,
         path: str,
-        expected_status: Optional[int] = None,
+        expected_status: typing.Optional[int] = None,
         as_response: bool = False,
-        **kwargs: Any,
+        **kwargs: typing.Any
     ) -> _RetType:
         response = await self._inner.request(method, path, **kwargs)
 
@@ -60,9 +59,9 @@ class AwesomeTestClient:
         return result
 
 
-@pytest.fixture
+@pytest.fixture()
 async def api(
-    aiohttp_client: Callable[[Application], Awaitable[TestClient]],
+    aiohttp_client: typing.Callable[[Application], typing.Awaitable[TestClient]],
     aiohttp_app: Application,
 ) -> AwesomeTestClient:
     client = await aiohttp_client(aiohttp_app)

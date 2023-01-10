@@ -1,4 +1,4 @@
-from typing import Dict, Tuple
+import typing
 
 import pytest
 from aiohttp import web
@@ -6,12 +6,13 @@ from aiohttp.web import Application, Request, Response, json_response
 
 pytest_plugins = ["aiohttp.pytest_plugin"]
 
-_T = Tuple[Application, Dict[str, str]]
+_STATE_T = dict[str, typing.Union[str, bytes]]
+_T = tuple[Application, _STATE_T]
 
 
-@pytest.fixture
+@pytest.fixture()
 def setup() -> _T:
-    state: Dict[str, str] = {}
+    state: _STATE_T = {}
 
     async def reg(request: Request) -> None:
         nonlocal state
@@ -42,11 +43,11 @@ def setup() -> _T:
     return app, state
 
 
-@pytest.fixture
+@pytest.fixture()
 def aiohttp_app(setup: _T) -> Application:
     return setup[0]
 
 
-@pytest.fixture
-def req(setup: _T) -> Dict[str, str]:
+@pytest.fixture()
+def req(setup: _T) -> _STATE_T:
     return setup[1]
