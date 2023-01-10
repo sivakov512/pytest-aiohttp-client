@@ -1,9 +1,10 @@
-*.egg-info
 *.py[cod]
+./.idea
 .cache
-.eggs
-.pytest_cache
+.coverage
+.envrc
+.local
 .venv
 __pycache__
-build
 dist
+poetry.lock

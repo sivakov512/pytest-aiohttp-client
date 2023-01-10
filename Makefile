@@ -1,13 +1,18 @@
-clean:
-	find . -name "*.py[co]" -exec rm --force {} +
-	find . -name "__pycache__" -exec rm -r --force {} +
-	find . -name ".pytest_cache" -exec rm -r --force {} +
-	find . -name ".mypy_cache" -exec rm -r --force {} +
+install:
+	poetry install
 
-test:
-	pytest
+install-no-dev:
+	poetry install --no-dev
 
 lint:
-	flake8
-	mypy ./
-	black ./ --check
+	poetry run flake8
+	poetry run mypy ./
+
+test:
+	poetry run pytest
+
+test-with-coverage:
+	poetry run pytest --cov=pytest_aiohttp_client
+
+upload-coverage:
+	poetry run coveralls
