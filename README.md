@@ -2,8 +2,8 @@
 
 Awesome pytest fixture for awesome [aiohttp](https://docs.aiohttp.org/en/stable/)!
 
-[![Build status](https://github.com/sivakov512/pytest-aiohttp-client/workflows/test/badge.svg)](https://github.com/sivakov512/pytest-aiohttp-client/actions?query=workflow%3Atest)
-[![Coverage Status](https://coveralls.io/repos/github/sivakov512/pytest-aiohttp-client/badge.svg?branch=main)](https://coveralls.io/github/sivakov512/pytest-aiohttp-client?branch=main)
+[![test](https://github.com/sivakov512/pytest-aiohttp-client/workflows/test/badge.svg)](https://github.com/sivakov512/pytest-aiohttp-client/actions?query=workflow%3Atest)
+[![Coverage Status](https://coveralls.io/repos/github/sivakov512/pytest-aiohttp-client/badge.svg?branch=master)](https://coveralls.io/github/sivakov512/pytest-aiohttp-client?branch=master)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 [![Python versions](https://img.shields.io/pypi/pyversions/pytest-aiohttp-client.svg)](https://pypi.python.org/pypi/pytest-aiohttp-client)
 [![PyPi](https://img.shields.io/pypi/v/pytest-aiohttp-client.svg)](https://pypi.python.org/pypi/pytest-aiohttp-client)
