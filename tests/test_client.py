@@ -12,7 +12,7 @@ _STATE_T = dict[str, typing.Union[str, bytes]]
 async def test_will_send_request_with_expected_method(
     method: str, api: AwesomeTestClient, req: _STATE_T
 ) -> None:
-    await (getattr(api, method)("/url/"))
+    await getattr(api, method)("/url/")
 
     assert req["method"] == method.upper()
 
