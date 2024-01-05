@@ -17,7 +17,7 @@ aiohttp = "^3.8.3"
 pytest_aiohttp_client = "pytest_aiohttp_client"
 
 [tool.poetry.group.dev.dependencies]
-flake8 = "^6.0.0"
+flake8 = "^7.0.0"
 flake8-debugger = "^4.1.2"
 flake8-isort = "^6.0.0"
 flake8-print = "^5.0.0"
