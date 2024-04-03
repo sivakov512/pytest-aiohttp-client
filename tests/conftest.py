@@ -10,7 +10,7 @@ _STATE_T = dict[str, typing.Union[str, bytes]]
 _T = tuple[Application, _STATE_T]
 
 
-@pytest.fixture()
+@pytest.fixture
 def setup() -> _T:
     state: _STATE_T = {}
 
@@ -43,11 +43,11 @@ def setup() -> _T:
     return app, state
 
 
-@pytest.fixture()
+@pytest.fixture
 def aiohttp_app(setup: _T) -> Application:
     return setup[0]
 
 
-@pytest.fixture()
+@pytest.fixture
 def req(setup: _T) -> _STATE_T:
     return setup[1]
