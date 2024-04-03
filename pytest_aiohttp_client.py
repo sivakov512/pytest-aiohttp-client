@@ -59,7 +59,7 @@ class AwesomeTestClient:
         return result
 
 
-@pytest.fixture()
+@pytest.fixture
 async def api(
     aiohttp_client: typing.Callable[[Application], typing.Awaitable[TestClient]],
     aiohttp_app: Application,
